@@ -105,7 +105,7 @@ float* host_mat_mul(const float* A, const float* B, const float* C, const struct
     cuBLASErrChk (cublasGetVersion (handle, &cublas_version));
     cuBLASErrChk (cublasSetMathMode (handle, CUBLAS_TENSOR_OP_MATH));
     printf("    Tensor core used [cublas ver. %d.%d]\n" , cublas_version/1000, cublas_version%1000);
-    printf("    Acceptable error rate %.7f [%f*GT < GT < %f*GT)\n" , EPS, (1-EPS), (1+EPS));
+    printf("    Acceptable error rate %.7f [%f*GT < Pred < %f*GT]\n" , EPS, (1-EPS), (1+EPS));
     
     int m=conf.CH, n=conf.CW, k=conf.AW;
     const float *alpha=&(conf.alpha), *beta=&(conf.beta);
