@@ -262,6 +262,7 @@ int main(int argc, char** argv) {
     free (B);
     free (C);
     free (result);
+    cuProfilerStop ();
 
     return 0;
 }

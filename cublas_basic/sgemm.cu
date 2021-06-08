@@ -4,6 +4,7 @@
 #include <random>
 #include <sys/time.h>
 #include <cublas_v2.h>
+#include <cudaProfiler.h>
 #include <omp.h>
 
 #define NUM_CORE (6)
@@ -262,6 +263,7 @@ int main(int argc, char** argv) {
     free (B);
     free (C);
     free (result);
+    cuProfilerStop ();
 
     return 0;
 }

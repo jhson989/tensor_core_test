@@ -2,7 +2,7 @@ CC = /usr/local/cuda/bin/nvcc
 PROGS = sgemm
 OBJS =
 INC =
-COMPILE_OPT = -lcublas -O3 -Xcompiler -fopenmp
+COMPILE_OPT = -lcublas -lcuda -O3 -Xcompiler -fopenmp
 
 all: ${PROGS}
 
